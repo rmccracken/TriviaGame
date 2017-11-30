@@ -41,7 +41,7 @@ var totalQuestions = questions.length;
 var timer = 120;
 // variable that will  contdown timer
 var timerCount;
-
+// hides divs for later
 var divUpdate = function(){
 	$("#finished").hide();
 	$("#correctAnswers").hide();
@@ -58,15 +58,15 @@ function countdown(){
 
 	// connecting to html to show timer
 	$("#timer").html("<h3>" + timer + "</h3>");
-
+// Stops  timer
 	if (timer === 0) {
 		stop();
 		showSummary();
-		// alert("Time's Up!");
+		alert("Time's Up!");
 	}
 }
 
-
+// stop function
 function stop() {
 	clearInterval(timerCount);
 }
@@ -95,38 +95,42 @@ function loadQuestion(questionIndex){
 	choice3.textContent = i.choice3;
 	choice4.textContent = i.choice4;
 };
-
+// used to move to next question
 var nextQuestion = function(){
 	var selectedChoice = $("input[type=radio]:checked");
 	// does each radio button = its selected choice
 	console.log(selectedChoice);
 	var userAnswer = selectedChoice.val();
 		selectedChoice.prop('checked', false);
-	
+	// adds +1 to undefined answers
 	if (userAnswer == undefined){
 		unanswered++;
 	}
+	// adds +1 to right answers
 	else {
 		if (questions[currentQuestion].answer == userAnswer){
 		correctAnswers++;
 		}
+		// does whats left the incorrect answers
 		else {
 			incorrectAnswers++}
 		}
-	// selectedChoice.checked = false;
+		// changes ma button to submit
 	currentQuestion++;
 	if (currentQuestion == totalQuestions - 1){
 		submit.textContent =  "submit";
 	}
+	// we are done show results
 	if(currentQuestion == totalQuestions){
 		showSummary();
 	}
+	// loads another question
 	else {
 		loadQuestion(currentQuestion);
 	}
 
 }
-
+// removes questions adds Final Summary
 var showSummary = function(){
 	$(".container").empty();
 		$("#finished").append("Quiz Complete");
