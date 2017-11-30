@@ -1,87 +1,44 @@
-alert("Welcome to the Quiz!");
+// condences former block of code var questions
+var questionBuilder = function(question, choice1, choice2, choice3, choice4, answer){
+	return {
+	"question": question,
+	"choice1":  choice1,
+	"choice2":  choice2,
+	"choice3": 	choice3,
+	"choice4": 	choice4,
+	"answer": 	answer
+	};
+};
+// actual questions
+var getQuestions = function(){
+	return [
+	questionBuilder("Who was the first actor to play James Bond?", "Roger Moore", "Pierce Brosnen", "Sean Connery", "Timmothy Dalton", "3"),
+	questionBuilder("What was the video game made based on a Bond film?", "Goldfinger", "GoldenEye", "Skyrim", "Casino Royale", "2"),
+	questionBuilder("How many actors have played in Bond Films", "6", "7", "9", "12", "1"),
+	questionBuilder("Who 4", "who", "what", "when", "where", "2"),
+	questionBuilder("Who 5", "who", "what", "when", "where", "2"),
+	questionBuilder("Who 6", "who", "what", "when", "where", "2"),
+	questionBuilder("Who 7", "who", "what", "when", "where", "2"),
+	questionBuilder("Who 8", "who", "what", "when", "where", "2"),
+	questionBuilder("Who 9", "who", "what", "when", "where", "2"),
+	questionBuilder("Who10", "who", "what", "when", "where", "2")];
+};
+
+// alert("Welcome to the Quiz!");
 // variable for current question
 var currentQuestion = 0;
 // variable to hold corrent answer count
-var correctA = 0;
+var correctAnswers = 0;
 // variable to hold incorrect answer count
-var incorrectA = 0;
+var incorrectAnswers = 0;
 // variable to hold the unanswered questions
 var unanswered = 0;
 // Holds questions, choices, and answers
-var questions = [{
-	"question": "Who's on First",
-	"choice1": "who",
-	"choice2": "what",
-	"choice3": "when",
-	"choice4": "where",
-	"answer": "1"
-}, {
-	"question": "What's on second",
-	"choice1": "who",
-	"choice2": "what",
-	"choice3": "when",
-	"choice4": "where",
-	"answer": "2"
-}, {
-	"question": "Who's on third",
-	"choice1": "who",
-	"choice2": "what",
-	"choice3": "when",
-	"choice4": "where",
-	"answer": "3"
-}, {
-	"question": "Who's at bat",
-	"choice1": "who",
-	"choice2": "what",
-	"choice3": "when",
-	"choice4": "where",
-	"answer": "4"
-}, {
-	"question": "Who's on First",
-	"choice1": "who",
-	"choice2": "what",
-	"choice3": "when",
-	"choice4": "where",
-	"answer": "5"
-}, {
-	"question": "Who's at bat",
-	"choice1": "who",
-	"choice2": "what",
-	"choice3": "when",
-	"choice4": "where",
-	"answer": "6"
-}, {
-	"question": "Why is this still going",
-	"choice1": "who",
-	"choice2": "what",
-	"choice3": "when",
-	"choice4": "where",
-	"answer": "7"
-}, {
-	"question": "Where are we",
-	"choice1": "who",
-	"choice2": "what",
-	"choice3": "when",
-	"choice4": "where",
-	"answer": "8"
-}, {
-	"question": "is this thing over",
-	"choice1": "who",
-	"choice2": "what",
-	"choice3": "when",
-	"choice4": "where",
-	"answer": "9"
-}, {
-	"question": "yes it is.",
-	"choice1": "who",
-	"choice2": "what",
-	"choice3": "when",
-	"choice4": "where",
-	"answer": "1"
-}];
+var questions = getQuestions();
+
 var totalQuestions = questions.length;
 // sets timer to  20 
-var timer = 20;
+var timer = 120;
 // variable that will  contdown timer
 var timerCount;
 
@@ -104,10 +61,12 @@ function countdown(){
 
 	if (timer === 0) {
 		stop();
-		alert("Time's Up!");
+		showSummary();
+		// alert("Time's Up!");
 	}
 }
-// 
+
+
 function stop() {
 	clearInterval(timerCount);
 }
@@ -141,30 +100,39 @@ var nextQuestion = function(){
 	var selectedChoice = $("input[type=radio]:checked");
 	// does each radio button = its selected choice
 	console.log(selectedChoice);
-	var answer = selectedChoice.value;
-	if (questions[currentQuestion].answer === answer){
-		correctA++;
-		// console.log(correctA);
+	var userAnswer = selectedChoice.val();
+		selectedChoice.prop('checked', false);
+	
+	if (userAnswer == undefined){
+		unanswered++;
 	}
-	// // else if (questions[currentQuestion].answer !== answer){
-	// 	incorreectA++;
-	// 	// console.log(incorreectA);
-	// }
-	selectedChoice.checked = false;
+	else {
+		if (questions[currentQuestion].answer == userAnswer){
+		correctAnswers++;
+		}
+		else {
+			incorrectAnswers++}
+		}
+	// selectedChoice.checked = false;
 	currentQuestion++;
 	if (currentQuestion == totalQuestions - 1){
 		submit.textContent =  "submit";
 	}
 	if(currentQuestion == totalQuestions){
-		$(".container").empty();
-		$("#finished").append("Quiz Complete");
-		$("#correctAnswers").append(correctA);
-		$("incorrectAnswers").append(incorrectA);
-		$("#unAnswered").append(unanswered);
-
-
+		showSummary();
 	}
-	loadQuestion(currentQuestion);
+	else {
+		loadQuestion(currentQuestion);
+	}
+
+}
+
+var showSummary = function(){
+	$(".container").empty();
+		$("#finished").append("Quiz Complete");
+		$("#correctAnswers").append(correctAnswers);
+		$("#incorrectAnswers").append(incorrectAnswers);
+		$("#unAnswered").append(unanswered);
 }
 
 loadQuestion(currentQuestion);
