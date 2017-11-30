@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Trivia Game</title>
+		<!-- Reset.css -->
+		<link rel="stylesheet" href="assets/css/reset.css">
+		<!-- Bootstrap -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<!--CSS file -->
+		<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+	<div class="container">
+		<div class="page-header" id="title">
+			<h1>Bond Trivia</h1>
+		</div>
+			<div class="panel panel-default" id="timer"></div>
+				<div class="question" id="question">text
+				</div>
+
+					<label class="choice"><input type="radio" name="choice" value="1" /> <span id="choice1"></span></label>
+					<br>
+					<label class="choice"><input type="radio" name="choice" value="2" /> <span id="choice2"></span></label>
+					<br>
+					<label class="choice"><input type="radio" name="choice" value="3" /> <span id="choice3"></span></label>
+					<br>
+					<label class="choice"><input type="radio" name="choice" value="4" /> <span id="choice4"></span></label>
+					<br>
+					<button id="submit" onclick="nextQuestion()">Next Question</button>
+	</div>			
+			<div class="body" id="finished">
+			
+			</div>
+		<div class="body" id="correctAnswers">
+		
+		</div>
+		<div class="body" id="incorrectAnswers">
+			
+		</div>
+		<div class="body" id="unAnswered">
+			
+			
+		</div>
+	
+</body>
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
+<!-- Javascript file -->
+<script src="assets/javascript/app.js"></script>
+
+</html>

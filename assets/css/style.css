@@ -1,0 +1,24 @@
+.container{
+	text-align: center
+}
+#timer{
+	background-color: darkgrey;
+}
+#questions{
+	background-color: blue;
+}
+#finished{
+	background-color: green;
+}
+#correctAnswers{
+	background-color: pink;
+}
+#incorrectAnswers{
+	background-color: orange;
+}
+#unAnswered{
+	background-color: red;
+}
+#question{
+	background-color: grey;
+}
