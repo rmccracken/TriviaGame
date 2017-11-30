@@ -1,24 +1,43 @@
+body{
+	background-image: url("../images/background.jpg");	
+	background-size: cover;
+}
+span{
+	color: white;
+}
 .container{
-	text-align: center
+	text-align: center;
+	font-size: 28px;
+}
+#title{
+	color: white;
 }
 #timer{
-	background-color: darkgrey;
-}
-#questions{
-	background-color: blue;
-}
-#finished{
-	background-color: green;
-}
-#correctAnswers{
-	background-color: pink;
-}
-#incorrectAnswers{
-	background-color: orange;
-}
-#unAnswered{
-	background-color: red;
+	 color: white;
+	 background: rgba(0,0,0,.05);
 }
 #question{
+	background-color: none;
+	color: white;
+	font-weight: bold;
+}
+#finished{
 	background-color: grey;
+	text-align: center;
+	font-size: 28px;
+}
+#correctAnswers{
+	background-color: grey;
+	text-align: center;
+	font-size: 28px;
+}
+#incorrectAnswers{
+	background-color: grey;
+	text-align: center;
+	font-size: 28px;
+}
+#unAnswered{
+	background-color: grey;
+	text-align: center;
+	font-size: 28px;
 }

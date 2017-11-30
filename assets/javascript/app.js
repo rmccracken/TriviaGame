@@ -134,9 +134,9 @@ var nextQuestion = function(){
 var showSummary = function(){
 	$(".container").empty();
 		$("#finished").append("Quiz Complete");
-		$("#correctAnswers").append(correctAnswers);
-		$("#incorrectAnswers").append(incorrectAnswers);
-		$("#unAnswered").append(unanswered);
+		$("#correctAnswers").append("Correct Answers: " + correctAnswers);
+		$("#incorrectAnswers").append("Incorrect Answers: " + incorrectAnswers);
+		$("#unAnswered").append("Unanswered Questions: " + unanswered);
 }
 
 loadQuestion(currentQuestion);
