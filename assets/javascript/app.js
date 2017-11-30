@@ -15,13 +15,13 @@ var getQuestions = function(){
 	questionBuilder("Who was the first actor to play James Bond?", "Roger Moore", "Pierce Brosnen", "Sean Connery", "Timmothy Dalton", "3"),
 	questionBuilder("What was the video game made based on a Bond film?", "Goldfinger", "GoldenEye", "Skyrim", "Casino Royale", "2"),
 	questionBuilder("How many actors have played in Bond Films", "6", "7", "9", "12", "1"),
-	questionBuilder("Who 4", "who", "what", "when", "where", "2"),
-	questionBuilder("Who 5", "who", "what", "when", "where", "2"),
-	questionBuilder("Who 6", "who", "what", "when", "where", "2"),
-	questionBuilder("Who 7", "who", "what", "when", "where", "2"),
-	questionBuilder("Who 8", "who", "what", "when", "where", "2"),
-	questionBuilder("Who 9", "who", "what", "when", "where", "2"),
-	questionBuilder("Who10", "who", "what", "when", "where", "2")];
+	questionBuilder("What does the 'double-0' stand for?", "License to travel without a passport", "License to Kill", "Take cars without asking", "License to cary firearms", "2"),
+	questionBuilder("Who is 007's secretary?", "Desmond", "M", "Q", "Moneyypenny", "4"),
+	questionBuilder("What is the name of the first Bond film?", "Dr. No", "Goldfinger", "Thunderball", "The Man with the Golden Gun", "2"),
+	questionBuilder("Who had the shortest run as James Bond 007?", "George Lazenby", "Roger Moore", "Sean Bean", "Daniel Craig", "1"),
+	questionBuilder("What is 007's car of choice?", "Ford", "Mercedes-Benz", "Jagguar", "Ashton Martin", "4"),
+	questionBuilder("Who is James Bond's #1 contact in America?", "Walter White", "Felix Leiter", "Jim Fanning", "Jimmy Fallon", "2"),
+	questionBuilder("James Bond is a character based on what author's writings?", "Ian Fleming", "Robert Frost", "George orwell", "George R.R. Martin", "1")];
 };
 
 // alert("Welcome to the Quiz!");
