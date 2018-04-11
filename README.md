@@ -1,5 +1,5 @@
 # TriviaGame
-a simple jQuery/javascript trivia game.
+A jQuery/javascript trivia game.
 Rules
 - You will have 120 seconds (2 minutes) to answerr all the questons
   - Answer the questions to the best of your ability.
